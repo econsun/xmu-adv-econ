@@ -1,0 +1,61 @@
+% cSpell: disable
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+  mycalloutbox/.style={
+    enhanced,
+    breakable,
+    boxrule=0.8pt,
+    % 整体间距
+    after skip=18pt, before skip=18pt,
+    % 标题间距
+    toptitle=1mm, bottomtitle=1mm,
+    % 内部间距
+    left=2mm, right=2mm, top=3mm, bottom=3mm,
+    coltitle=black,
+    fonttitle=\bfseries,
+  }
+}
+
+\tcbset {
+  arc=0pt,
+  coltitle=black,
+  after skip=18pt,
+  left=3mm, right=3mm, top=3mm, bottom=3mm,
+}
+
+\tcbset{
+  before upper={\setlist[enumerate,1]{label=(\alph*), left=0.3em, labelsep=0.5em}},
+}
+
+\NewTColorBox{definition}{O{} O{}}{%
+  title={Definition%
+    \ifx&#1&\else~#1\fi%
+    \ifx&#2&\else\,: #2\fi},
+  mycalloutbox=mypurple,
+  colback=mypurple!30!white,
+  colframe=mypurple,
+}
+
+\NewTColorBox{theorem}{O{} O{}}{%
+  title={Theorem%
+    \ifx&#1&\else~#1\fi%
+    \ifx&#2&\else\,: #2\fi},
+  mycalloutbox=mypink,
+  colback=mypink!30!white,
+  colframe=mypink,
+}
+
+\newtcolorbox{note}[1][]{
+  title=Note\,: #1,
+  mycalloutbox=myblue,
+  colback=myblue!30!white,
+  colframe=myblue,
+}
+
+\newtcolorbox{question}{
+  breakable,
+  colback=mygray,
+  colframe=mygray,
+}

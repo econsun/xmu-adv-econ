@@ -1,0 +1,117 @@
+% 更灵活设置命令
+\usepackage{xparse}
+% 大写首字母命令
+\usepackage{mfirstuc}
+
+% 文字类宏
+
+\newcommand{\hwnumber}[1]{Assignment \;\#\;#1}
+\newcommand{\hint}{\vspace{6pt}\textsc{\bf Hint}\,: }
+\newcommand{\remark}{\vspace{6pt}\textsc{\bf Remark}\,: }
+\newcommand{\past}[1]{{\textcolor{xmublue}{\bf(#1)}} }
+\newcommand{\score}[1]{{\textcolor{xmublue}{\bf(#1 points)}} }
+
+\newcommand{\xmured}[1]{{\color{xmured}#1}}
+
+% 数学类宏
+\let\originalthinspace\, 
+\renewcommand{\,}{\ifmmode \mspace{2mu} \else \originalthinspace \fi}
+
+\newcommand{\spacexs}{\mspace{1mu}}
+\newcommand{\spaces}{\mspace{2mu}}
+\newcommand{\spacem}{\mspace{4mu}}
+\newcommand{\spacel}{\mspace{6mu}}
+
+\newcommand{\drv}{\mathrm{d}\spacexs }
+\newcommand{\p}{\partial\spacexs }
+\newcommand{\pfkal}{\partial\spacexs F\bka{K,AL}}
+\newcommand{\pfkalpl}{\p F\bka{K,AL}\islash\p L}
+\newcommand{\pfkalpk}{\p F\bka{K,AL}\islash\p K}
+
+\newcommand{\matspace}{\mspace{4mu}}
+
+\newcommand{\islash}{{\spaces}/{\spaces}}
+\newcommand{\ivbar}{{\spaces}|{\spaces}}
+
+
+\newcommand{\pr}{\Pr }
+\newcommand{\prA}{\Pr\bka{A}}
+\newcommand{\prB}{\Pr\bka{B}}
+\newcommand{\prC}{\Pr\bka{C}}
+\newcommand{\pra}[1]{\Pr\bka{#1}}
+\newcommand{\prs}[1]{\Pr\bks{#1}}
+\newcommand{\prd}[1]{\Pr\bkd{#1}}
+
+
+
+\newcommand{\bka}[1]{\left(\spaces#1\spaces\right)}
+\newcommand{\bks}[1]{\left[\spaces#1\spaces\right]}
+\newcommand{\bkd}[1]{\left\{\spaces#1\spaces\right\}}
+\newcommand{\bkf}[1]{\left|\spaces#1\spaces\right|}
+\newcommand{\bkg}[1]{\left\|\spaces#1\spaces\right\|}
+\newcommand{\bkas}[1]{\left(\spaces#1\spaces\right]}
+\newcommand{\bksa}[1]{\left[\spaces#1\spaces\right)}
+
+\newcommand{\matbka}[1]{\left(\matspace\begin{matrix}#1\end{matrix}\matspace\right)}
+\newcommand{\matbks}[1]{\left[\matspace\begin{matrix}#1\end{matrix}\matspace\right]}
+\newcommand{\matbkf}[1]{\left|\matspace\begin{matrix}#1\end{matrix}\matspace\right|}
+\newcommand{\matbkv}[1]{[\spaces\begin{matrix}#1\end{matrix}\spaces]}
+
+\newcommand{\bkt}{\bka{t}}
+\newcommand{\bkk}{\bka{k}}
+\newcommand{\bkz}{\bka{z}}
+\newcommand{\bkA}{\bka{A}}
+\newcommand{\bkkss}{\bka{k^*}}
+\newcommand{\bkkl}{\bka{K,L}}
+\newcommand{\bkkal}{\bka{K,AL}}
+\newcommand{\bkx}{\bka{x}}
+\newcommand{\bkxx}{\bka{x_1,x_2}}
+\newcommand{\bkbsx}{\bka{\boldsymbol{x}}}
+\newcommand{\bkbspw}{\bka{\boldsymbol{p},w}}
+\newcommand{\bkbspu}{\bka{\boldsymbol{p},u}}
+
+
+
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\bbs}[1]{\bar{\boldsymbol{#1}}}
+\newcommand{\hbs}[1]{\hat{\boldsymbol{#1}}}
+\newcommand{\tbs}[1]{\tilde{\boldsymbol{#1}}}
+
+\newcommand{\bsx}{\boldsymbol{x}}
+\newcommand{\bsA}{\boldsymbol{A}}
+
+\newcommand{\call}{\mathcal{L}}
+
+
+
+\newcommand{\argmax}{\mathop{\text{argmax}}}
+\newcommand{\argmin}{\mathop{\text{argmin}}}
+
+
+
+\NewDocumentCommand{\bbr}{o}{%
+  \mathbb{R}\IfValueT{#1}{^{#1}}%
+}
+
+\NewDocumentCommand{\bb}{m o}{%
+  \mathbb{#1}\IfValueT{#2}{^{#2}}%
+}
+
+\RenewDocumentCommand{\cal}{m o}{%
+  \mathcal{#1}\IfValueT{#2}{^{#2}}%
+}
+
+\NewDocumentCommand{\scr}{m o}{%
+  \mathscr{#1}\IfValueT{#2}{^{#2}}%
+}
+
+\newcommand{\calb}{\mathcal{B}}
+\renewcommand{\call}{\mathcal{L}}
+
+\renewcommand{\d}{\text{d}}
+\newcommand{\te}[1]{\text{#1}}
+\newcommand{\teu}[1]{\text{\MakeUppercase{#1}}}
+\newcommand{\noun}[1]{\text{#1}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\tra}{^{T}}

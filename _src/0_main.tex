@@ -1,0 +1,109 @@
+% -----------------------------------------------
+% -----------------------------------------------
+%   作者：Paul Sun
+%   邮箱：econsunrq@outlook.com
+% -----------------------------------------------
+% -----------------------------------------------
+%   说明：LaTeX 作业模板（英文）
+%   日期：2025.09.16
+%   版本：1.01 - 添加 quest 和 ans 环境
+% -----------------------------------------------
+% -----------------------------------------------
+
+\documentclass[a4paper]{article}
+
+\input{../_src/1_pkg}
+
+\input{../_src/2_tcb}
+
+% 默认不启用，因为内容过于个性化
+% \input{../_src/3_macro}
+
+% 参考文献 格式：作者+空格+年份
+% 请确保 bib 文件 名字 路径 正确 ⚠️
+% \usepackage[backend=biber,style=authoryear]{biblatex}
+% \addbibresource{refs.bib}
+
+% 创建 \Rom{} 命令生成大写罗马数字，将要生成的数字填入 {} 中
+\newcommand{\Rom}[1]{\uppercase\expandafter{\romannumeral #1}}
+
+% 元数据，请全部填写 ⚠️
+% 不想显示的要在 cover.tex 的对应位置注释
+\newcommand{\coursename}       {}  % 课程全称
+\newcommand{\courseabbname}    {}  % 课程简称
+\newcommand{\semester}         {}  % 开课学期
+\newcommand{\assignmentname}   {}  % 作业编号
+\newcommand{\instructorname}   {}  % 任课教师
+
+\newcommand{\myname}           {}  % 姓名
+\newcommand{\myinstitution}    {}  % 机构
+\newcommand{\myid}             {}  % 学号
+\newcommand{\myemail}          {}  % 邮箱
+
+% 完成日期默认为 今天 ，格式 YYYY/MM/DD
+\newcommand{\deliverdate}      {\the\year/\ifnum\month<10 0\fi\the\month/\ifnum\day<10 0\fi\the\day}
+\newcommand{\duedate}          {YYYY/MM/DD}  % 截止日期
+
+% -----------------------------------------------
+% -----------------------------------------------
+% 作业 正文 开始
+% -----------------------------------------------
+% -----------------------------------------------
+
+\begin{document}
+
+% 导入封面
+\input{../_src/4_cover}
+
+\phantomsection
+\section*{AI Usage Statement}
+\addcontentsline{toc}{section}{AI Usage Statement}
+
+This assignment was entirely completed by myself.
+
+AI was used only for English language polishing.
+
+% 创建标题请完整复制以下三行
+% 以确保生成目录并准确转跳
+\phantomsection
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+
+\begin{question}
+    \begin{enumerate}
+        \item Here is the question 1.a.
+        \item Here is the question 1.b.
+    \end{enumerate}
+\end{question}
+
+\subsection*{Answer to 1.a}
+
+Here is the answer content.
+
+\subsection*{Answer to 1.b}
+
+Here is the answer content.
+
+\phantomsection
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+
+\begin{question}
+    Here is the question content.
+\end{question}
+
+\subsection*{Answer to 2}
+
+Here is the answer content.
+
+Enjoy your homework : )
+
+% -----------------------------------------------
+% -----------------------------------------------
+% 作业 正文 结束
+% -----------------------------------------------
+% -----------------------------------------------
+
+% \printbibliography
+
+\end{document}

@@ -1,0 +1,74 @@
+% cSpell: disable
+
+\begin{titlepage}
+  \begingroup
+  \setlength{\parskip}{0em}
+
+  \pagenumbering{gobble}
+  
+  \begin{center}
+      
+% 封面顶部空白
+    \vspace*{0.5cm}
+
+% 课程信息
+    {\Huge \textbf{\coursename} \par}
+    \vspace{1.5cm}
+
+% 作业信息
+    {\LARGE \textbf{\assignmentname} \par}
+    \vspace{1.5cm}
+
+% 学生信息
+    {\Large \textbf{\myname} \par}
+    \vspace{0.3cm}
+    \ifdefined\myid
+      {\large \myinstitution \par}
+      \vspace{0.3cm}
+    \fi
+    \ifdefined\myid
+      {\large \myid \par}
+      \vspace{0.3cm}
+    \fi
+    \vspace{-0.1cm}
+    {\large \myemail \par}
+    \vspace{1.5cm}
+
+% 教师信息
+    {\large \textbf{Instructor}\quad\instructorname \par}
+    \vspace{0.2cm}
+
+% 日期
+    {\large \textbf{Delivered}\quad\deliverdate \par}
+    \vspace{0.2cm}
+    {\large \textbf{Deadline\;}\quad\duedate \par}
+
+  \end{center}
+  \vspace{3cm}
+
+% 生成目录
+
+  % 格式化目录样式设置
+  \renewcommand{\cftsecfont}{\normalfont} 
+  \renewcommand{\cftsecpagefont}{\normalfont}
+  % 删除目录默认名字
+  \renewcommand{\contentsname}{}
+  % 添加目录自定义名字
+  \noindent {\Large \bfseries Question List}
+  % 设置目录条目样式
+  \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+  % 设置目录条目间距
+  \setlength{\columnsep}{2em}               % 两栏间距
+  \setlength{\cftbeforesecskip}{1.5ex}      % section 间距
+  \setlength{\cftbeforesubsecskip}{0.8ex}   % subsection 间距
+
+  % 生成双栏目录
+  \begin{multicols}{2}
+    \tableofcontents
+  \end{multicols}
+
+  \endgroup
+\end{titlepage}
+
+% 使用 阿拉伯数字 开始页码记数
+\pagenumbering{arabic}
