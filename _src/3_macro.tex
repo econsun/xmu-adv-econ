@@ -6,8 +6,10 @@
 % 文字类宏
 
 \newcommand{\hwnumber}[1]{Assignment \;\#\;#1}
-\newcommand{\hint}{\vspace{6pt}\textsc{\bf Hint}\,: }
-\newcommand{\remark}{\vspace{6pt}\textsc{\bf Remark}\,: }
+\newcommand{\hint}{\textsc{\bf Hint}\,: }
+\newcommand{\remark}{\textsc{\bf Remark}\,: }
+\newcommand{\vhint}{\vspace{0.7em}\textsc{\bf Hint}\,: }
+\newcommand{\vremark}{\vspace{0.7em}\textsc{\bf Remark}\,: }
 \newcommand{\past}[1]{{\textcolor{xmublue}{\bf(#1)}} }
 \newcommand{\score}[1]{{\textcolor{xmublue}{\bf(#1 points)}} }
 
@@ -33,6 +35,17 @@
 \newcommand{\islash}{{\spaces}/{\spaces}}
 \newcommand{\ivbar}{{\spaces}|{\spaces}}
 
+\newcommand{\mean}{\text{E}}
+\newcommand{\meana}[1]{\text{E}\bka{#1}}
+\newcommand{\means}[1]{\text{E}\bks{#1}}
+\newcommand{\meand}[1]{\text{E}\bkd{#1}}
+\newcommand{\meanf}[1]{\text{E}\bkf{#1}}
+
+\newcommand{\var}{\text{Var}}
+\newcommand{\vara}[1]{\text{Var}\bka{#1}}
+\newcommand{\vars}[1]{\text{Var}\bks{#1}}
+\newcommand{\vard}[1]{\text{Var}\bkd{#1}}
+\newcommand{\varf}[1]{\text{Var}\bkf{#1}}
 
 \newcommand{\pr}{\Pr }
 \newcommand{\prA}{\Pr\bka{A}}
@@ -44,13 +57,13 @@
 
 
 
-\newcommand{\bka}[1]{\left(\spaces#1\spaces\right)}
-\newcommand{\bks}[1]{\left[\spaces#1\spaces\right]}
-\newcommand{\bkd}[1]{\left\{\spaces#1\spaces\right\}}
-\newcommand{\bkf}[1]{\left|\spaces#1\spaces\right|}
-\newcommand{\bkg}[1]{\left\|\spaces#1\spaces\right\|}
-\newcommand{\bkas}[1]{\left(\spaces#1\spaces\right]}
-\newcommand{\bksa}[1]{\left[\spaces#1\spaces\right)}
+\newcommand{\bka}[1]{\left(\spacexs#1\spacexs\right)}
+\newcommand{\bks}[1]{\left[\spacexs#1\spacexs\right]}
+\newcommand{\bkd}[1]{\left\{\spacexs#1\spacexs\right\}}
+\newcommand{\bkf}[1]{\left|\spacexs#1\spacexs\right|}
+\newcommand{\bkg}[1]{\left\|\spacexs#1\spacexs\right\|}
+\newcommand{\bkas}[1]{\left(\spacexs#1\spacexs\right]}
+\newcommand{\bksa}[1]{\left[\spacexs#1\spacexs\right)}
 
 \newcommand{\matbka}[1]{\left(\matspace\begin{matrix}#1\end{matrix}\matspace\right)}
 \newcommand{\matbks}[1]{\left[\matspace\begin{matrix}#1\end{matrix}\matspace\right]}
@@ -66,10 +79,13 @@
 \newcommand{\bkkal}{\bka{K,AL}}
 \newcommand{\bkx}{\bka{x}}
 \newcommand{\bkxx}{\bka{x_1,x_2}}
+\newcommand{\bkxy}{\bka{x,y}}
 \newcommand{\bkbsx}{\bka{\boldsymbol{x}}}
 \newcommand{\bkbspw}{\bka{\boldsymbol{p},w}}
 \newcommand{\bkbspu}{\bka{\boldsymbol{p},u}}
 
+\newcommand{\bkfxn}{\bkf{x_n}}
+\newcommand{\bkfyn}{\bkf{y_n}}
 
 
 \newcommand{\bs}[1]{\boldsymbol{#1}}
@@ -78,6 +94,8 @@
 \newcommand{\tbs}[1]{\tilde{\boldsymbol{#1}}}
 
 \newcommand{\bsx}{\boldsymbol{x}}
+\newcommand{\bsy}{\boldsymbol{y}}
+\newcommand{\bsz}{\boldsymbol{z}}
 \newcommand{\bsA}{\boldsymbol{A}}
 
 \newcommand{\call}{\mathcal{L}}
@@ -115,3 +133,7 @@
 
 \newcommand{\inv}{^{-1}}
 \newcommand{\tra}{^{T}}
+\newcommand{\abfun}{\,\cdot\,}
+\newcommand{\dis}{\displaystyle}
+
+\newcommand{\intpiz}{\int^{\infty}_{0}}
