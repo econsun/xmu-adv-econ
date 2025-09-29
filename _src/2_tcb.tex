@@ -47,8 +47,10 @@
   colframe=mypink,
 }
 
-\newtcolorbox{note}[1][]{
-  title=Note\,: #1,
+\NewTColorBox{proposition}{O{} O{}}{%
+  title={Proposition%
+    \ifx&#1&\else~#1\fi%
+    \ifx&#2&\else\,: #2\fi},
   mycalloutbox=myblue,
   colback=myblue!30!white,
   colframe=myblue,
