@@ -148,23 +148,20 @@
 
 \usepackage{enumitem}
 
-\setlist[enumerate]{
-    left=1.5em, 
-    labelsep=0.5em,
-    % topsep=0.7em,
-    % itemsep=0.7em,
-    % parsep=0.7em,
-    % partopsep=0pt
+\newlist{alphlist}{enumerate}{1}
+\newlist{romlist}{enumerate}{1}
+\newlist{numlist}{enumerate}{1}
+\newlist{cirlist}{enumerate}{1}
+
+\setlist[alphlist,romlist,numlist,cirlist]{%
+    left=1.5em,
+    labelsep=0.7em,
 }
 
-\newlist{alphlist}{enumerate}{1}
 \setlist[alphlist]{label=(\alph*)}
-
-\newlist{cirlist}{enumerate}{1}
+\setlist[romlist]{label=(\roman*)}
+\setlist[numlist]{label=(\arabic*)}
 \setlist[cirlist]{label={\raisebox{0.2ex}{\scalebox{0.7}{$\bullet$}}}}
-
-\newlist{numlist}{enumerate}{1}
-\setlist[numlist]{label=\arabic*.}
 
 % -----------------------------------------------
 % -----------------------------------------------
