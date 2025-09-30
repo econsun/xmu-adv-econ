@@ -27,7 +27,7 @@
 \linespread{1.3}
 \setlength{\lineskiplimit}{1.2pt}
 % 段间距
-\setlength{\parskip}{0.7em}
+\setlength{\parskip}{0.5em}
 
 % 首行缩进
 \usepackage{indentfirst}
@@ -148,13 +148,23 @@
 
 \usepackage{enumitem}
 
-\setlist[enumerate,1]{label=(\alph*), left=1.5em, labelsep=0.5em}
+\setlist[enumerate]{
+    left=1.5em, 
+    labelsep=0.5em,
+    % topsep=0.7em,
+    % itemsep=0.7em,
+    % parsep=0.7em,
+    % partopsep=0pt
+}
+
+\newlist{alphlist}{enumerate}{1}
+\setlist[alphlist]{label=(\alph*)}
 
 \newlist{cirlist}{enumerate}{1}
-\setlist[cirlist,1]{label={\raisebox{0.2ex}{\scalebox{0.7}{$\bullet$}}}, left=1.5em, labelsep=0.5em}
+\setlist[cirlist]{label={\raisebox{0.2ex}{\scalebox{0.7}{$\bullet$}}}}
 
 \newlist{numlist}{enumerate}{1}
-\setlist[numlist,1]{label=\arabic*., left=0.5em, labelsep=0.5em}
+\setlist[numlist]{label=\arabic*.}
 
 % -----------------------------------------------
 % -----------------------------------------------
