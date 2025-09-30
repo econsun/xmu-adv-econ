@@ -6,14 +6,16 @@
 % 文字类宏
 
 \newcommand{\hwnumber}[1]{Assignment \;\#\;#1}
-\newcommand{\hint}{\textsc{\bf Hint}\,: }
-\newcommand{\remark}{\textsc{\bf Remark}\,: }
-\newcommand{\vhint}{\vspace{0.7em}\textsc{\bf Hint}\,: }
-\newcommand{\vremark}{\vspace{0.7em}\textsc{\bf Remark}\,: }
+\newcommand{\hint}{\fafugreen{\textsc{\bf Hint}}\,: }
+\newcommand{\remark}{\fafugreen{\textsc{\bf Remark}}\,: }
+\newcommand{\vhint}{\fafugreen{\vspace{0.7em}\textsc{\bf Hint}}\,: }
+\newcommand{\vremark}{\fafugreen{\vspace{0.7em}\textsc{\bf Remark}}\,: }
 \newcommand{\past}[1]{{\textcolor{xmublue}{\bf(#1)}} }
 \newcommand{\score}[1]{{\textcolor{xmublue}{\bf(#1 points)}} }
 
 \newcommand{\xmured}[1]{{\color{xmured}#1}}
+\newcommand{\xmublue}[1]{{\color{xmublue}#1}}
+\newcommand{\fafugreen}[1]{{\color{fafugreen}#1}}
 
 % 数学类宏
 \let\originalthinspace\, 
@@ -24,8 +26,9 @@
 \newcommand{\spacem}{\mspace{4mu}}
 \newcommand{\spacel}{\mspace{6mu}}
 
-\newcommand{\drv}{\mathrm{d}\spacexs }
+\renewcommand{\d}{\mathrm{d}\spacexs }
 \newcommand{\p}{\partial\spacexs }
+
 \newcommand{\pfkal}{\partial\spacexs F\bka{K,AL}}
 \newcommand{\pfkalpl}{\p F\bka{K,AL}\islash\p L}
 \newcommand{\pfkalpk}{\p F\bka{K,AL}\islash\p K}
@@ -94,6 +97,7 @@
 \newcommand{\tbs}[1]{\tilde{\boldsymbol{#1}}}
 
 \newcommand{\bsx}{\boldsymbol{x}}
+\newcommand{\bsp}{\boldsymbol{p}}
 \newcommand{\bsy}{\boldsymbol{y}}
 \newcommand{\bsz}{\boldsymbol{z}}
 \newcommand{\bsA}{\boldsymbol{A}}
@@ -106,7 +110,7 @@
 \newcommand{\argmin}{\mathop{\text{argmin}}}
 
 
-
+\newcommand{\bbrn}{\bbr[n]}
 \NewDocumentCommand{\bbr}{o}{%
   \mathbb{R}\IfValueT{#1}{^{#1}}%
 }
@@ -137,3 +141,5 @@
 \newcommand{\dis}{\displaystyle}
 
 \newcommand{\intpiz}{\int^{\infty}_{0}}
+
+\newcommand{\parspace}{\vspace{0.7em}}
