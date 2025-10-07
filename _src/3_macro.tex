@@ -6,10 +6,10 @@
 % 文字类宏
 
 \newcommand{\hwnumber}[1]{Assignment \;\#\;#1}
-\newcommand{\hint}{\fafugreen{\textsc{\bf Hint}}\,: }
-\newcommand{\remark}{\fafugreen{\textsc{\bf Remark}}\,: }
-\newcommand{\vhint}{\fafugreen{\vspace{0.7em}\textsc{\bf Hint}}\,: }
-\newcommand{\vremark}{\fafugreen{\vspace{0.7em}\textsc{\bf Remark}}\,: }
+\newcommand{\hint}{\par\fafugreen{\textsc{\bf Hint}}\,: }
+\newcommand{\remark}{\par\fafugreen{\textsc{\bf Remark}}\,: }
+\newcommand{\vhint}{\par\vspace{0.7em}\fafugreen{\textsc{\bf Hint}}\,: }
+\newcommand{\vremark}{\par\vspace{0.7em}\fafugreen{\textsc{\bf Remark}}\,: }
 \newcommand{\past}[1]{{\textcolor{xmublue}{\bf(#1)}} }
 \newcommand{\score}[1]{{\textcolor{xmublue}{\bf(#1 points)}} }
 
@@ -18,6 +18,7 @@
 \newcommand{\fafugreen}[1]{{\color{fafugreen}#1}}
 
 % 数学类宏
+
 \let\originalthinspace\, 
 \renewcommand{\,}{\ifmmode \mspace{2mu} \else \originalthinspace \fi}
 
@@ -27,16 +28,25 @@
 \newcommand{\spacel}{\mspace{6mu}}
 
 \renewcommand{\d}{\mathrm{d}\spacexs }
-\newcommand{\p}{\partial\spacexs }
+\newcommand{\p}{\partial\spacem }
 
-\newcommand{\pfkal}{\partial\spacexs F\bka{K,AL}}
+\newcommand{\pfkal}{\p F\bka{K,AL}}
 \newcommand{\pfkalpl}{\p F\bka{K,AL}\islash\p L}
 \newcommand{\pfkalpk}{\p F\bka{K,AL}\islash\p K}
 
 \newcommand{\matspace}{\mspace{4mu}}
 
 \newcommand{\islash}{{\spaces}/{\spaces}}
+\newcommand{\bigslash}{{\spaces}\big/{\spaces}}
+\newcommand{\biggslash}{{\spaces}\bigg/{\spaces}}
+\newcommand{\Bigslash}{{\spaces}\Big/{\spaces}}
+\newcommand{\Biggslash}{{\spaces}\Bigg/{\spaces}}
+
 \newcommand{\ivbar}{{\spaces}|{\spaces}}
+\newcommand{\bigbar}{{\spaces}\big|{\spaces}}
+\newcommand{\biggbar}{{\spaces}\bigg|{\spaces}}
+\newcommand{\Bigbar}{{\spaces}\Big|{\spaces}}
+\newcommand{\Biggbar}{{\spaces}\Bigg|{\spaces}}
 
 \newcommand{\mean}{\text{E}}
 \newcommand{\meana}[1]{\text{E}\bka{#1}}
@@ -87,8 +97,8 @@
 \newcommand{\bkbspw}{\bka{\boldsymbol{p},w}}
 \newcommand{\bkbspu}{\bka{\boldsymbol{p},u}}
 
-\newcommand{\bkfxn}{\bkf{x_n}}
-\newcommand{\bkfyn}{\bkf{y_n}}
+\newcommand{\bkdxn}{\bkd{x_n}}
+\newcommand{\bkdyn}{\bkd{y_n}}
 
 
 \newcommand{\bs}[1]{\boldsymbol{#1}}
@@ -130,7 +140,6 @@
 \newcommand{\calb}{\mathcal{B}}
 \renewcommand{\call}{\mathcal{L}}
 
-\renewcommand{\d}{\text{d}}
 \newcommand{\te}[1]{\text{#1}}
 \newcommand{\teu}[1]{\text{\MakeUppercase{#1}}}
 \newcommand{\noun}[1]{\text{#1}}
@@ -143,3 +152,51 @@
 \newcommand{\intpiz}{\int^{\infty}_{0}}
 
 \newcommand{\parspace}{\vspace{0.7em}}
+
+\newcommand{\poisson}{\te{Poisson}}
+\newcommand{\normal}{\te{Normal}}
+\newcommand{\exponential}{\te{Exponential}}
+\newcommand{\bernoulli}{\te{Bernoulli}}
+\newcommand{\binomial}{\te{Binomial}}
+\newcommand{\geometric}{\te{Geometric}}
+\newcommand{\uniform}{\te{Uniform}}
+\newcommand{\gammaf}{\te{Gamma}}
+\newcommand{\betaD}{\te{Beta}}
+
+\newcommand{\ninn}{N\in\mathbb N}
+
+\NewDocumentCommand{\solowaxis}{}{
+    \draw (0,0) -- (8,0) node[below] {\(k\)};
+    \draw (0,0) -- (0,5) node[above left, rotate=90, align=right] {Output and investment\\per unit of effective labor};
+}
+
+\NewDocumentCommand{\solowproductfunction}{m O{}}{
+    \draw[#2] (0,0) 
+        .. controls (0.2,2.4) and (4,4) .. (7,4.4) 
+        node[right] {#1};
+}
+
+\NewDocumentCommand{\solowinvestfunction}{m O{}}{
+    \draw[#2] (0,0) 
+        .. controls (0.5,1.2) and (3.8,2.1) .. (7,2.3) 
+        node[right] {#1};
+}
+
+\NewDocumentCommand{\solowbreakeven}{m m O{}}{%
+    \draw[#3] (0,0) -- (#1) node[right] {#2};
+}
+
+\NewDocumentCommand{\solowequilibrium}{m m m O{} O{}}{%
+    \filldraw[#4] (#1,#2) circle (1.5pt);
+    \draw[#5] (#1,#2) -- (#1,0) node[below] {#3};
+}
+
+\NewDocumentCommand{\solowarrow}{m m m m}{%
+    \draw[->] (#1,#2) -- ++(#3:#4);
+}
+
+\newcommand{\growrate}[1]{\dfrac{\dot{#1}}{#1}}
+\newcommand{\growratea}[1]{\dfrac{\dot{\bka{#1}}}{#1}}
+\newcommand{\growrates}[1]{\dfrac{\dot{\bks{#1}}}{#1}}
+
+\newcommand{\notation}[1]{(\(#1\))}
