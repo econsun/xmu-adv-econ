@@ -28,11 +28,12 @@
 \newcommand{\spacel}{\mspace{6mu}}
 
 \renewcommand{\d}{\mathrm{d}\spacexs }
-\newcommand{\p}{\partial\spacem }
+\newcommand{\p}{\partial\spaces }
 
+\newcommand{\pp}[1]{\dfrac{\partial}{\p #1}}
 \newcommand{\pfkal}{\p F\bka{K,AL}}
-\newcommand{\pfkalpl}{\p F\bka{K,AL}\islash\p L}
-\newcommand{\pfkalpk}{\p F\bka{K,AL}\islash\p K}
+\newcommand{\pfkalpl}{\p F\bka{K,AL}/\,\p L}
+\newcommand{\pfkalpk}{\p F\bka{K,AL}/\,\p K}
 
 \newcommand{\matspace}{\mspace{4mu}}
 
@@ -195,8 +196,14 @@
     \draw[->] (#1,#2) -- ++(#3:#4);
 }
 
-\newcommand{\growrate}[1]{\dfrac{\dot{#1}}{#1}}
-\newcommand{\growratea}[1]{\dfrac{\dot{\bka{#1}}}{#1}}
-\newcommand{\growrates}[1]{\dfrac{\dot{\bks{#1}}}{#1}}
+\newcommand{\grt}[1]{\dfrac{\dot{#1}}{#1}}
+\newcommand{\grta}[1]{\dfrac{\dot{\bka{#1}}}{#1}}
+\newcommand{\grts}[1]{\dfrac{\dot{\bks{#1}}}{#1}}
+\newcommand{\ingrt}[1]{\dot{#1}\islash{#1}}
+\newcommand{\ingrta}[1]{\dot{\bka{#1}}\islash{#1}}
+\newcommand{\ingrts}[1]{\dot{\bks{#1}}\islash{#1}}
 
 \newcommand{\notation}[1]{(\(#1\))}
+
+\renewcommand{\and}{\quad\te{and}\quad}
+\renewcommand{\implies}{\quad\Rightarrow\quad}

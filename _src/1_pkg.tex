@@ -25,9 +25,9 @@
 
 % 行间距
 \linespread{1.3}
-\setlength{\lineskiplimit}{1.2pt}
+\setlength{\lineskiplimit}{1pt}
 % 段间距
-\setlength{\parskip}{0.7em}
+\setlength{\parskip}{1em}
 
 % 首行缩进
 \usepackage{indentfirst}
@@ -133,13 +133,13 @@
   \hrule width 0.4\textwidth height 0.4pt % 横线宽度和高度
 }
 
-% 正文区 脚注符号 左右间距
-\makeatletter
-\renewcommand{\@makefnmark}{\hbox{\hspace{2pt}\@textsuperscript{\normalfont[\@thefnmark]}\hspace{2pt}}}
-\makeatother
-
 \setlength{\footnotemargin}{1.2em}  % 脚注区 符号 和 内容 间距
 \setlength{\footnotesep}{14pt}      % 脚注区 不同脚注 间距
+
+% 正文区 脚注符号 左右间距
+\makeatletter
+\renewcommand{\@makefnmark}{\hbox{\hspace{2pt}\@textsuperscript{\normalfont[\@thefnmark]}}}
+\makeatother
 
 % -----------------------------------------------
 % -----------------------------------------------
@@ -172,6 +172,7 @@
 % -----------------------------------------------
 
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{float}
 
@@ -182,6 +183,9 @@
 \usepackage{tikz}           % 绘图
 \usepackage{pgfplots}       % 坐标系和绘图更方便
 \pgfplotsset{compat=1.18}   % 兼容版本设置
+
+\tikzset{>=stealth}
+\tikzset{every node/.style={font=\small}}
 
 % -----------------------------------------------
 % -----------------------------------------------
@@ -218,7 +222,8 @@
 
 \usepackage{xparse}
 
-\setlength{\jot}{6pt}
+\setlength{\jot}{1.5\jot}
+\renewcommand{\arraystretch}{1.3}
 \setlength{\arraycolsep}{4pt}
 
 \AtBeginDocument{%
@@ -228,7 +233,7 @@
   \setlength{\belowdisplayshortskip}{8pt}
 }
 
-\newcommand{\mathspace}{\hspace{0.12em}}
+\newcommand{\mathspace}{\hspace{1pt}}
 \let\oldinline\(
 \renewcommand{\(}{\oldinline\mathspace}
 \let\oldendinline\)
