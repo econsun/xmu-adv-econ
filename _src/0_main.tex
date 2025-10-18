@@ -21,11 +21,12 @@
 
 % 参考文献 格式：作者+空格+年份
 % 请确保 bib 文件 名字 路径 正确 ⚠️
-% \usepackage[backend=biber,style=authoryear]{biblatex}
 % \addbibresource{refs.bib}
 
 % 创建 \Rom{} 命令生成大写罗马数字，将要生成的数字填入 {} 中
-\newcommand{\Rom}[1]{\uppercase\expandafter{\romannumeral #1}}
+\newcommand{\Rom}[1]{
+    \uppercase\expandafter{\romannumeral #1}
+}
 
 % 元数据，请全部填写 ⚠️
 % 不想显示的要在 cover.tex 的对应位置注释

@@ -6,16 +6,20 @@
 % 文字类宏
 
 \newcommand{\hwnumber}[1]{Assignment \;\#\;#1}
-\newcommand{\hint}{\par\fafugreen{\textsc{\bf Hint}}\,: }
-\newcommand{\remark}{\par\fafugreen{\textsc{\bf Remark}}\,: }
-\newcommand{\vhint}{\par\vspace{0.7em}\fafugreen{\textsc{\bf Hint}}\,: }
-\newcommand{\vremark}{\par\vspace{0.7em}\fafugreen{\textsc{\bf Remark}}\,: }
+\newcommand{\hint}{\par\textsc{\bf\fafugreen{Hint}}\,: }
+\newcommand{\remark}{\par\textsc{\bf\fafugreen{Remark}}\,: }
+\newcommand{\vhint}{\par\vspace{0.7em}\textsc{\bf\fafugreen{Hint}}\,: }
+\newcommand{\vremark}{\par\vspace{0.7em}\textsc{\bf\fafugreen{Remark}}\,: }
 \newcommand{\past}[1]{{\textcolor{xmublue}{\bf(#1)}} }
 \newcommand{\score}[1]{{\textcolor{xmublue}{\bf(#1 points)}} }
 
 \newcommand{\xmured}[1]{{\color{xmured}#1}}
 \newcommand{\xmublue}[1]{{\color{xmublue}#1}}
 \newcommand{\fafugreen}[1]{{\color{fafugreen}#1}}
+
+\newcommand{\bluebf}[1]{\textcolor{xmublue}{\textbf{#1}}}
+
+\newcommand{\vtmath}{\vspace{-6pt}}
 
 % 数学类宏
 
@@ -30,6 +34,7 @@
 \renewcommand{\d}{\mathrm{d}\spacexs }
 \newcommand{\p}{\partial\spaces }
 
+\newcommand{\dd}[1]{\dfrac{\d}{\d{#1}}}
 \newcommand{\pp}[1]{\dfrac{\partial}{\p #1}}
 \newcommand{\pfkal}{\p F\bka{K,AL}}
 \newcommand{\pfkalpl}{\p F\bka{K,AL}/\,\p L}
@@ -92,7 +97,11 @@
 \newcommand{\bkkl}{\bka{K,L}}
 \newcommand{\bkkal}{\bka{K,AL}}
 \newcommand{\bkx}{\bka{x}}
+\newcommand{\bky}{\bka{y}}
 \newcommand{\bkxx}{\bka{x_1,x_2}}
+\newcommand{\bkxxx}{\bka{x_1,x_2,x_3}}
+\newcommand{\bkyy}{\bka{y_1,y_2}}
+\newcommand{\bkyyy}{\bka{y_1,y_2,y_3}}
 \newcommand{\bkxy}{\bka{x,y}}
 \newcommand{\bkbsx}{\bka{\boldsymbol{x}}}
 \newcommand{\bkbspw}{\bka{\boldsymbol{p},w}}
@@ -120,6 +129,7 @@
 \newcommand{\argmax}{\mathop{\text{argmax}}}
 \newcommand{\argmin}{\mathop{\text{argmin}}}
 
+\newcommand{\bbn}{\mathbb{N}}
 
 \newcommand{\bbrn}{\bbr[n]}
 \NewDocumentCommand{\bbr}{o}{%
@@ -145,12 +155,40 @@
 \newcommand{\teu}[1]{\text{\MakeUppercase{#1}}}
 \newcommand{\noun}[1]{\text{#1}}
 
-\newcommand{\inv}{^{-1}}
+\newcommand{\Cl}[1]{\text{Cl}\bka{#1}}
+
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\inva}[1]{\bka{#1}^{-1}}
+\newcommand{\invs}[1]{\bks{#1}^{-1}}
+\newcommand{\invd}[1]{\bkd{#1}^{-1}}
+\newcommand{\invf}[1]{\bkf{#1}^{-1}}
 \newcommand{\tra}{^{T}}
 \newcommand{\abfun}{\,\cdot\,}
 \newcommand{\dis}{\displaystyle}
+\renewcommand{\i}{\infty}
 
-\newcommand{\intpiz}{\int^{\infty}_{0}}
+
+\newcommand{\limn}{\lim_{n\to\infty}}
+
+\newcommand{\intii}{\int^{+\infty}_{-\infty}}
+\newcommand{\intoi}{\int^{+\infty}_{0}}
+\newcommand{\intio}{\int^{0}_{-\infty}}
+\newcommand{\intxo}[1]{\int^{0}_{#1}}
+\newcommand{\intox}[1]{\int^{#1}_{0}}
+\newcommand{\intxi}[1]{\int^{+\infty}_{#1}}
+\newcommand{\intix}[1]{\int^{#1}_{-\infty}}
+\newcommand{\intab}[2]{^{#1}_{#2}}
+
+\newcommand{\idxin}{^{n}_{i=1}}
+\newcommand{\idxjn}{^{n}_{j=1}}
+\newcommand{\idxkN}{^{N}_{k=1}}
+\newcommand{\idxii}{^{\infty}_{i=1}}
+\newcommand{\idxji}{^{\infty}_{j=1}}
+\newcommand{\idxni}{^{\infty}_{n=1}}
+\newcommand{\idxki}{^{\infty}_{k=1}}
+\newcommand{\idxab}[2]{^{#1}_{#2}}
+
+
 
 \newcommand{\parspace}{\vspace{0.7em}}
 
@@ -196,6 +234,15 @@
     \draw[->] (#1,#2) -- ++(#3:#4);
 }
 
+\NewDocumentCommand{\footbook}{m m m o m}{%
+  \IfNoValueTF{#4}
+    {#1 (#2). \textit{#3}. #5.}%
+    {\IfBlankTF{#4}
+       {#1 (#2). \textit{#3}. #5.}%
+       {#1 (#2). \textit{#3}. #4 edition. #5.}%
+    }%
+}
+
 \newcommand{\grt}[1]{\dfrac{\dot{#1}}{#1}}
 \newcommand{\grta}[1]{\dfrac{\dot{\bka{#1}}}{#1}}
 \newcommand{\grts}[1]{\dfrac{\dot{\bks{#1}}}{#1}}
@@ -204,6 +251,7 @@
 \newcommand{\ingrts}[1]{\dot{\bks{#1}}\islash{#1}}
 
 \newcommand{\notation}[1]{(\(#1\))}
+\renewcommand{\math}[1]{\(#1\)}
 
 \renewcommand{\and}{\quad\te{and}\quad}
 \renewcommand{\implies}{\quad\Rightarrow\quad}
